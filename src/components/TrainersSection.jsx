@@ -55,7 +55,7 @@ export default function TrainersSection() {
     <section
       id="trainers"
       ref={sectionRef}
-      className="relative w-full bg-[#0a0a0a] pt-20 sm:pt-24 md:pt-28 pb-40 sm:pb-48 md:pb-56 lg:pb-64 xl:pb-72 flex flex-col items-center"
+      className="relative w-full bg-[#0a0a0a] pt-20 sm:pt-24 md:pt-28 pb-24 lg:pb-32 shrink-0 flex flex-col items-center"
     >
       <div className="w-full max-w-6xl mx-auto px-5 sm:px-8 md:px-10 lg:px-12">
         {/* Heading */}
@@ -101,7 +101,6 @@ export default function TrainersSection() {
                 alt="Aman - Strength Coach"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-[#1a1a1a] via-[#1a1a1a]/30 to-transparent" />
             </div>
 
             <div
@@ -146,7 +145,6 @@ export default function TrainersSection() {
                 alt="Vishal - Performance Coach"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-[#1a1a1a] via-[#1a1a1a]/30 to-transparent" />
             </div>
 
             <div
@@ -179,8 +177,13 @@ export default function TrainersSection() {
       </div>
 
       <style>{`
+        .trainer-card {
+          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
         .trainer-card:hover {
-          box-shadow: 0 20px 60px rgba(255, 214, 0, 0.15), 0 10px 40px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 100px 20px rgba(255, 214, 0, 0.35), 0 10px 40px rgba(0, 0, 0, 0.5);
+          transform: translateY(-10px) scale(1.02);
+          z-index: 10;
         }
       `}</style>
 

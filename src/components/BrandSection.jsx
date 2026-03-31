@@ -155,7 +155,7 @@ export default function BrandSection() {
   return (
     <section
       ref={sectionRef}
-      className="brand-section relative w-full min-h-screen bg-[#0a0a0a] flex items-center justify-center py-12 sm:py-16 md:py-20 overflow-hidden"
+      className="brand-section relative w-full min-h-screen bg-[#0a0a0a] flex items-center justify-center py-12 sm:py-16 md:py-20 mt-20 sm:mt-28 lg:mt-40 overflow-hidden"
     >
       <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6">
         {/* Stacked Photos - Center */}

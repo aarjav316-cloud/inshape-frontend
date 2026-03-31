@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="relative w-full bg-[#050505] mt-32 sm:mt-40 md:mt-48 lg:mt-56 xl:mt-64 border-t border-[#FFD600]/20 flex justify-center">
+    <footer className="relative w-full bg-[#050505] border-t border-[#FFD600]/20 flex justify-center mt-12 sm:mt-16">
       {/* Subtle Yellow Glow */}
       <div className="absolute inset-0 bg-linear-to-br from-[#FFD600]/10 via-transparent to-transparent blur-2xl opacity-30"></div>
 

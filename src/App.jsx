@@ -1,23 +1,18 @@
-import HeroSection from "./components/HeroSection";
-import BottomNavbar from "./components/BottomNavbar";
-import BrandSection from "./components/BrandSection";
-import TrainersSection from "./components/TrainersSection";
-import Footer from "./components/Footer";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+// App.css import removed to fix missing 404 file error (since we use Tailwind index.css)
 
 function App() {
   return (
-    <>
-      <div className="hero-section relative w-full h-screen">
-        <HeroSection />
-      </div>
-      <BrandSection />
-      <TrainersSection />
-      {/* Spacer between sections with matching background */}
-      <div className="w-full h-32 sm:h-40 md:h-48 lg:h-56 bg-[#0a0a0a]" />
-      <Footer />
-      <BottomNavbar />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+      </Routes>
+    </Router>
   );
 }
 
