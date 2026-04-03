@@ -36,7 +36,8 @@ function AdminDashboard() {
     nextDueDate: ""
   });
 
-  const BASE_URL = "http://localhost:5000/api/members";
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+  const BASE_URL = `${API_URL}/api/members`;
 
   // Fetch Stats and Members
   const fetchDashboardData = async () => {

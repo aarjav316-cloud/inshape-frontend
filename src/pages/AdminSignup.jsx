@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function AdminLogin() {
+function AdminSignup() {
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -15,21 +16,24 @@ function AdminLogin() {
 
     try {
       const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
-      const response = await fetch(`${API_URL}/api/admin/login`, {
+      const response = await fetch(`${API_URL}/api/admin/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, email, password }),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "Login failed");
+        throw new Error(data.message || "Signup failed");
       }
 
+      // Store token (14 days)
       localStorage.setItem("token", data.token);
+
+      // Redirect to dashboard
       navigate("/admin-dashboard");
     } catch (err) {
       setError(err.message);
@@ -66,13 +70,13 @@ function AdminLogin() {
         </div>
       </div>
 
-      {/* Right Side - Login Form */}
+      {/* Right Side - Signup Form */}
       <div className="w-full lg:w-1/2 flex items-center justify-center bg-[#0a0a0a] px-6 py-12">
         <div className="w-full max-w-[400px]">
           {/* Title Section */}
           <div style={{ marginBottom: "32px" }}>
             <h2 className="text-3xl font-black text-white mb-3 tracking-tight">
-              ADMIN LOGIN
+              CREATE ADMIN
             </h2>
             <div className="w-20 h-1 bg-[#FFD600]" />
           </div>
@@ -80,7 +84,7 @@ function AdminLogin() {
           {/* Error Message */}
           {error && (
             <div
-              className="bg-gradient-to-r from-red-500/10 to-red-600/10 border border-red-500/30 text-red-300 px-4 py-3.5 rounded-xl text-sm flex items-center gap-3 backdrop-blur-sm shadow-lg shadow-red-500/5 animate-in fade-in slide-in-from-top-2 duration-300"
+              className="bg-linear-to-r from-red-500/10 to-red-600/10 border border-red-500/30 text-red-300 px-4 py-3.5 rounded-xl text-sm flex items-center gap-3 backdrop-blur-sm shadow-lg shadow-red-500/5 animate-in fade-in slide-in-from-top-2 duration-300"
               style={{ marginBottom: "20px" }}
             >
               <div className="shrink-0 w-5 h-5 bg-red-500/20 rounded-full flex items-center justify-center">
@@ -108,6 +112,21 @@ function AdminLogin() {
             >
               <div>
                 <label className="block text-gray-400 mb-1.5 text-xs font-bold uppercase tracking-wider">
+                  Username
+                </label>
+                <input
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  className="w-full px-4 py-3 bg-[#1a1a1a] text-white text-base border border-zinc-800 rounded-lg focus:border-[#FFD600] focus:ring-2 focus:ring-[#FFD600]/20 focus:outline-none transition-all duration-200 placeholder:text-gray-600"
+                  placeholder="admin"
+                  required
+                  minLength={3}
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-400 mb-1.5 text-xs font-bold uppercase tracking-wider">
                   Email
                 </label>
                 <input
@@ -131,6 +150,7 @@ function AdminLogin() {
                   className="w-full px-4 py-3 bg-[#1a1a1a] text-white text-base border border-zinc-800 rounded-lg focus:border-[#FFD600] focus:ring-2 focus:ring-[#FFD600]/20 focus:outline-none transition-all duration-200 placeholder:text-gray-600"
                   placeholder="••••••••"
                   required
+                  minLength={6}
                 />
               </div>
             </div>
@@ -142,19 +162,19 @@ function AdminLogin() {
               className="w-full bg-[#FFD600] hover:bg-[#e6c200] text-black font-bold py-3.5 uppercase tracking-wider transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg"
               style={{ marginTop: "24px" }}
             >
-              {loading ? "LOGGING IN..." : "LOGIN"}
+              {loading ? "CREATING..." : "CREATE ADMIN"}
             </button>
           </form>
 
-          {/* Signup Link */}
+          {/* Login Link */}
           <div className="mt-6 text-center">
             <p className="text-gray-500 text-sm">
-              Don't have an account?{" "}
+              Already have an account?{" "}
               <a
-                href="/admin-signup"
+                href="/admin-login"
                 className="text-[#FFD600] hover:text-[#e6c200] font-semibold transition-colors"
               >
-                Create Admin
+                Login here
               </a>
             </p>
           </div>
@@ -164,4 +184,4 @@ function AdminLogin() {
   );
 }
 
-export default AdminLogin;
+export default AdminSignup;
