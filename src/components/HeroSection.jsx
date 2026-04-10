@@ -1,10 +1,22 @@
+import heroImage from "../assets/hero.jpeg";
+import heroMobileImage from "../assets/heromobile.jpeg";
+
 export default function HeroSection() {
   return (
     <section className="hero-section relative w-full h-screen overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 w-full h-full animate-[zoomIn_20s_ease-in-out_infinite_alternate]">
+      {/* Background Image - Desktop */}
+      <div className="hidden md:block absolute inset-0 w-full h-full animate-[zoomIn_20s_ease-in-out_infinite_alternate]">
         <img
-          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop"
+          src={heroImage}
+          alt="Modern gym interior"
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
+
+      {/* Background Image - Mobile */}
+      <div className="block md:hidden absolute inset-0 w-full h-full animate-[zoomIn_20s_ease-in-out_infinite_alternate]">
+        <img
+          src={heroMobileImage}
           alt="Modern gym interior"
           className="w-full h-full object-cover object-center"
         />

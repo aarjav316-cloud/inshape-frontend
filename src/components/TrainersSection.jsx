@@ -89,89 +89,73 @@ export default function TrainersSection() {
           {/* Trainer 1 - Aman */}
           <div
             ref={card1Ref}
-            className="trainer-card group relative bg-[#1a1a1a] rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02] w-full max-w-[340px] sm:max-w-md lg:max-w-[480px]"
-            style={{
-              opacity: 0,
-              boxShadow: "0 10px 40px rgba(0, 0, 0, 0.5)",
-            }}
+            className="group relative rounded-3xl overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20 w-full max-w-[340px] sm:max-w-md lg:max-w-[480px] shadow-lg h-[500px] sm:h-[550px] md:h-[600px] flex flex-col justify-end"
+            style={{ opacity: 0 }}
           >
-            <div className="relative h-[280px] sm:h-[320px] md:h-[360px] overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=800"
-                alt="Aman - Strength Coach"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
+            {/* Background Image - Full Cover */}
+            <img
+              src="/src/assets/aman.jpeg"
+              alt="Aman - Strength Coach"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+
+            {/* Dark Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
+
+            {/* Badge */}
+            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-yellow-400 text-black px-2.5 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-semibold shadow-lg z-10">
+              Lead Trainer
             </div>
 
-            <div
-              className="space-y-5 sm:space-y-6"
-              style={{
-                padding: "40px 32px",
-              }}
-            >
-              <h3
-                className="text-3xl sm:text-4xl font-black text-white leading-tight"
-                style={{
-                  fontFamily: "Impact, 'Arial Black', sans-serif",
-                  letterSpacing: "0.05em",
-                }}
-              >
+            {/* Text Content Overlay */}
+            <div className="relative z-10 p-6 sm:p-8 space-y-3 sm:space-y-4">
+              <h3 className="text-3xl sm:text-4xl font-extrabold tracking-wide text-white">
                 AMAN
               </h3>
-              <p className="text-[#FFD600] text-lg sm:text-xl font-bold">
+              <p className="text-yellow-400 font-semibold text-lg sm:text-xl">
                 Strength Coach
               </p>
-              <p className="text-gray-300 text-base sm:text-lg leading-relaxed pt-1">
+              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
                 Helping you build strength and discipline through proven
                 training methods
               </p>
             </div>
-
-            <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#FFD600] rounded-2xl transition-all duration-500 pointer-events-none" />
           </div>
 
           {/* Trainer 2 - Vishal */}
           <div
             ref={card2Ref}
-            className="trainer-card group relative bg-[#1a1a1a] rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02] w-full max-w-[340px] sm:max-w-md lg:max-w-[480px]"
-            style={{
-              opacity: 0,
-              boxShadow: "0 10px 40px rgba(0, 0, 0, 0.5)",
-            }}
+            className="group relative rounded-3xl overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20 w-full max-w-[340px] sm:max-w-md lg:max-w-[480px] shadow-lg h-[500px] sm:h-[550px] md:h-[600px] flex flex-col justify-end"
+            style={{ opacity: 0 }}
           >
-            <div className="relative h-[280px] sm:h-[320px] md:h-[360px] overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=800"
-                alt="Vishal - Performance Coach"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
+            {/* Background Image - Full Cover */}
+            <img
+              src="/src/assets/vishal.jpeg"
+              alt="Vishal - Performance Coach"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+
+            {/* Dark Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
+
+            {/* Badge */}
+            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-yellow-400 text-black px-2.5 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-semibold shadow-lg z-10">
+              Performance Coach
             </div>
 
-            <div
-              className="space-y-5 sm:space-y-6"
-              style={{
-                padding: "40px 32px",
-              }}
-            >
-              <h3
-                className="text-3xl sm:text-4xl font-black text-white leading-tight"
-                style={{
-                  fontFamily: "Impact, 'Arial Black', sans-serif",
-                  letterSpacing: "0.05em",
-                }}
-              >
+            {/* Text Content Overlay */}
+            <div className="relative z-10 p-6 sm:p-8 space-y-3 sm:space-y-4">
+              <h3 className="text-3xl sm:text-4xl font-extrabold tracking-wide text-white">
                 VISHAL
               </h3>
-              <p className="text-[#FFD600] text-lg sm:text-xl font-bold">
+              <p className="text-yellow-400 font-semibold text-lg sm:text-xl">
                 Performance Coach
               </p>
-              <p className="text-gray-300 text-base sm:text-lg leading-relaxed pt-1">
+              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
                 Focused on performance and transformation with personalized
                 training
               </p>
             </div>
-
-            <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#FFD600] rounded-2xl transition-all duration-500 pointer-events-none" />
           </div>
         </div>
       </div>
