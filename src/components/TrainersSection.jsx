@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import amanImage from "../assets/aman.jpeg";
+import vishalImage from "../assets/vishal.jpeg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -94,7 +96,7 @@ export default function TrainersSection() {
           >
             {/* Background Image - Full Cover */}
             <img
-              src="/src/assets/aman.jpeg"
+              src={amanImage}
               alt="Aman - Strength Coach"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
@@ -130,7 +132,7 @@ export default function TrainersSection() {
           >
             {/* Background Image - Full Cover */}
             <img
-              src="/src/assets/vishal.jpeg"
+              src={vishalImage}
               alt="Vishal - Performance Coach"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
